@@ -1,0 +1,22 @@
+<strong class="text-success"><%= notice %></strong>
+<br>
+
+<div class="col-md-10 col-xs-12 col-sm-11 center-block">
+	<div class="card bg-light mb-3 text-dark">
+		
+		<h1>Descripción del ToDo</h1>
+		<p>
+			<strong>DESCRIPCIÓN:</strong>   <%= @todo.description %>
+		</p>
+		
+		<p>
+			<strong>ESTADO:</strong>  <%= @todo.completed ? 'Completado' : 'No Completado' %> 
+		</p>
+		
+		<div>
+			<%= link_to  "Volver", root_path, class:'btn btn-info' %>
+		</div>
+		
+		
+	</div>
+</div>

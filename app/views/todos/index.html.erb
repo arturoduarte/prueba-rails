@@ -1,0 +1,32 @@
+<div class="text-center">
+	<h1 class="text-center font-weight-bold text-success">Listado de ToDos</h1>
+	
+	
+	<!-- <div class="card bg-light mb-3" style="max-width: 10rem"> -->
+		<% @todos.each do |dato| %>
+		<div class="d-inline-block text-center">
+			<div class="col-md-12 center-block" style="margin-bottom: 20px">
+				<div class="card bg-light text-dark" style="padding-left: 20px;">
+					
+					<strong>DESCRIPCIÓN:</strong>   <%= dato.description %>
+					<strong>ESTADO:</strong>  <%= dato.completed ? 'Completado' : 'No Completado' %> <br><br>
+					
+					<div>
+						<%= link_to 'Mostrar', todo_path(dato), class: 'btn btn-info' %>
+						<%= link_to 'Editar', edit_todo_path(dato), class: 'btn btn-warning' %>
+						
+						<%= link_to 'Elimnar', destroy_todo_path(dato), method: :delete, class: 'btn btn-danger' %>
+						<%= link_to 'Check', complete_todo_path(dato), class: 'btn btn-success' %>	
+						<br><br>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<% end %>
+		
+		<br>
+		
+		<%= link_to  "Crear Nuevo", todos_new_path, class:'btn btn-primary' %>
+	</div>
