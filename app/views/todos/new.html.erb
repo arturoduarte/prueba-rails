@@ -1,14 +1,23 @@
 <strong class="text-danger"><%= notice %></strong>
 
-<h1>Creación de ToDo</h1>
+<div class="text-center">
+	<div class="col-md-8 col-xs-12 col-sm-8">
+		<div class="card bg-light text-dark">
+			<h1>Creación de ToDo</h1>
+			<%= form_with(model: @todo, local: true) do |form| %>
+			<%= form.label 'Descripción:' %>
+			<%= form.text_field :description %>
+			
+			<br>
+			<%= form.submit 'Crear', class:'btn btn-success'%>
+			<%= link_to  "Volver al Home", root_path, class:'btn btn-info' %>
+			<br><br>
+			<% end %>
+		</div>	
+		
+	</div>
+</div>
 
-<%= form_with(model: @todo, local: true) do |form| %>
-	<%= form.label :description %>
-	<%= form.text_field :description %>
 
-	<br>
-	<%= form.submit 'Crear'%>
 
-<% end %>
 
-<%#= link_to  "Volver al index", root_path %>

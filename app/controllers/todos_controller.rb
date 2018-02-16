@@ -41,7 +41,7 @@ class TodosController < ApplicationController
 	def destroy
 		@todo = Todo.find(params[:id])
 		@todo.destroy
-		redirect_to root_path, notice: 'ToDo se ha eliminado con éxito!!'
+		redirect_to root_path
 	end
 
 	def complete
